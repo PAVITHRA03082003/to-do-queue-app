@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    depends_on:
+      - mysql
+      - rabbitmq
+    environment:
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: rootpass
+      DB_NAME: appdb
+      RABBITMQ_URL: amqp://rabbitmq
+    ports:
+      - "3000:3000"
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: appdb
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"      # For RabbitMQ connection
+      - "15672:15672"    # For RabbitMQ management UI
+
+volumes:
+  mysql_data:
