@@ -1,17 +1,21 @@
 # to-do-queue-app
 To-Do Queue App is a lightweight Node.js application that demonstrates a producer-consumer architecture using RabbitMQ for task queuing and MySQL for persistent storage. Fully Dockerized, it allows asynchronous to-do note processing with simple deployment via Docker Compose.
 
- To-Do Queue App
+**To-Do Queue App**
+
 A lightweight, Dockerized To-Do Note App that uses RabbitMQ for task queuing and MySQL for persistent storage. Built with Node.js, this app demonstrates a simple producer-consumer architecture.
 
- Features
+ **Features**
+ 
  Message queue powered by RabbitMQ
  Create and manage to-do notes
  Message producer/consumer using amqplib
  Docker + Docker Compose for easy deployment
  MySQL for storing tasks (optional)
  Clean folder structure with producer.js, consumer.js, and docker-compose.yml
- Project Structure
+ 
+ **Project Structure**
+ 
 NOTE-APP-1/ │ ├── producer.js # Sends messages to RabbitMQ
 
 ├── consumer.js # Consumes messages from RabbitMQ
@@ -24,12 +28,15 @@ NOTE-APP-1/ │ ├── producer.js # Sends messages to RabbitMQ
 
 └── ... # Any additional app logic or UI
 
- Technologies Used
+ **Technologies Used**
+ 
 Node.js (v18+)
 RabbitMQ (via amqplib)
 MySQL 8 (as DB)
 Docker & Docker Compose
- How to Run
+
+**How to Run**
+ 
 1) Clone the repository
 git clone https://github.com/example-user/todo-queue-app.git
 cd todo-queue-app
@@ -46,7 +53,7 @@ RabbitMQ UI: http://localhost:15672 (Default: guest / guest)
 
 MySQL: Port 3306 (inside Docker)
 
- How It Works
+**How It Works**
 
 producer.js sends a to-do message to the RabbitMQ task_queue.
 
